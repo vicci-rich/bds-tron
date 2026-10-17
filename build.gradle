@@ -27,6 +27,8 @@ jar.enabled = false
 shadowJar.enabled = true
 
 sourceCompatibility = 1.8
+sourceSets.main.java.srcDirs += 'src/javafx/java'
+sourceSets.test.java.srcDirs += 'src/javafx/java'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 mainClassName = 'org.tron.program.FullNode'
 
@@ -276,6 +278,7 @@ shadowJar {
 }
 
 test {
+    maxParallelForks = 1
     testLogging {
         exceptionFormat = 'full'
     }
